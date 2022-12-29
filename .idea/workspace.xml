@@ -2,20 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spectre-Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/commands/StopCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/commands/StopCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/config/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/networking/NetworkWorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/networking/NetworkWorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/StopCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/networking/NetworkDelegatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkDelegatorThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/networking/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/Packet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,6 +30,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JaioSb7gCe4IMNFINk7lxefq2O" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "settings.editor.selected.configurable": "preferences.editor"
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="RunManager">

@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 import commands.HelpCommand;
 import commands.ICommand;
+import commands.PlayerListCommand;
 import commands.StopCommand;
 import config.Settings;
+import event.EventHandler;
 import logging.Logger;
 import networking.NetworkDelegatorThread;
 
@@ -53,6 +55,8 @@ public class Main {
 	public static void init() {
 		commands.add(new HelpCommand());
 		commands.add(new StopCommand());
+		commands.add(new PlayerListCommand());
+		EventHandler.init();
 	}
 
 }

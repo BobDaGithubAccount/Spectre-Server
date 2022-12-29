@@ -8,5 +8,6 @@ public class Settings {
 	public static final String serverName = "Test-Server";
 	public static final String serverDescription = "Test description, config.yml not implemented yet.";
 	public static final int portNumber = 3000;
+	public static final boolean debug = true;
 	
 }

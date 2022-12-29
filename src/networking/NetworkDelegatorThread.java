@@ -34,6 +34,7 @@ public class NetworkDelegatorThread extends Thread {
 			if(canRun) {
 				e.printStackTrace();
 			}
+			System.exit(-1);
 		}
 	}
 
