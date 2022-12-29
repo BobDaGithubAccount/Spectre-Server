@@ -19,6 +19,7 @@ public class StopCommand implements ICommand {
 		Main.scanner.close();
 		Main.ndt.shutdown();
 		Main.canRun = false;
+		System.exit(0);
 	}
 
 }

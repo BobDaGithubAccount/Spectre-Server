@@ -29,10 +29,6 @@ public class NetworkDelegatorThread extends Thread {
 				nwt.start();
 			}
 			
-			for(Entry<UUID, NetworkWorkerThread> e : connections.entrySet()) {
-				e.getValue().shutdown();
-			}
-			
 			ss.close();
 		} catch(Exception e) {
 			if(canRun) {
@@ -40,13 +36,10 @@ public class NetworkDelegatorThread extends Thread {
 			}
 		}
 	}
-	
+
 	public void shutdown() {
 		try {
 			canRun = false;
-			for(Entry<UUID, NetworkWorkerThread> e : connections.entrySet()) {
-				e.getValue().shutdown();
-			}
 			ss.close();
 		} catch (Exception e) {
 			e.printStackTrace();
