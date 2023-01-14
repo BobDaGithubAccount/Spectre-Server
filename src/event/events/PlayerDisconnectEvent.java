@@ -15,8 +15,8 @@ public class PlayerDisconnectEvent implements IEvent {
     @Override
     public boolean run(JSONObject json, NetworkWorkerThread nwt) {
 
-        Spectre.removePlayer(Spectre.getPlayer(nwt.connectionUUID));
-        nwt.hasReceivedGenericDisconnectPacket = true;
+        Spectre.players.remove(nwt.connectionUUID);
+        nwt.shutdown();
 
         System.out.println(Spectre.getPlayers());
 

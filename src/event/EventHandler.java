@@ -4,7 +4,6 @@ import event.events.PlayerConnectEvent;
 import event.events.PlayerDisconnectEvent;
 import event.events.PlayerMoveEvent;
 import lib.json.JSONObject;
-import logging.Logger;
 import networking.NetworkWorkerThread;
 import networking.Packet;
 
@@ -15,18 +14,26 @@ public class EventHandler {
     public static HashMap<String, ArrayList<IEvent>> events = new HashMap<String, ArrayList<IEvent>>();
 
     public static void pollPacket(JSONObject json, NetworkWorkerThread nwt) {
-        ArrayList<IEvent> eventsToPoll = events.get(json.get(Packet.packet_type));
-        System.out.println(eventsToPoll);
-        if(eventsToPoll==null) {
+        try {
+            ArrayList<IEvent> eventsToPoll = events.get(json.get(Packet.packet_type));
+            System.out.println(eventsToPoll);
+            if (eventsToPoll == null) {
+                return;
+            }
+            for (IEvent eventHook : eventsToPoll) {
+                boolean shouldContinue = eventHook.run(json, nwt);
+                if (!shouldContinue) {
+                    break;
+                }
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
             return;
-        }
-        for(IEvent eventHook : eventsToPoll) {
-            boolean shouldContinue = eventHook.run(json, nwt);
-            if(!shouldContinue) {break;}
         }
     }
 
     public static void addEventListener(String packetType, IEvent event) {
+        registeredEvents.add(event);
         ArrayList<IEvent> eventsToPoll = events.get(packetType);
         if(eventsToPoll==null) {
             events.put(packetType, new ArrayList<IEvent>());
@@ -36,7 +43,7 @@ public class EventHandler {
         events.put(packetType, eventsToPoll);
     }
 
-
+    public static ArrayList<IEvent> registeredEvents = new ArrayList<IEvent>();
 
     public static void init() {
         addEventListener(Packet.CConnectPacket, new PlayerConnectEvent());

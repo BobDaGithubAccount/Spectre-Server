@@ -9,6 +9,7 @@ import commands.PlayerListCommand;
 import commands.StopCommand;
 import config.Settings;
 import event.EventHandler;
+import gamelogic.Spectre;
 import logging.Logger;
 import networking.NetworkDelegatorThread;
 

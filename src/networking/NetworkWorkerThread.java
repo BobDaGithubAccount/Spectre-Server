@@ -1,53 +1,29 @@
 package networking;
 
-import java.io.*;
-import java.net.Socket;
-import java.util.*;
-
-import config.Settings;
 import event.EventHandler;
 import lib.json.JSONObject;
-import logging.Logger;
+
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.UUID;
 
 public class NetworkWorkerThread extends Thread {
 
 	public Socket socket;
+	public UUID connectionUUID;
 	public InputStream is;
 	public OutputStream os;
-	public UUID connectionUUID;
-	public boolean isRunning = true;
-	public boolean hasReceivedGenericDisconnectPacket = false;
-	
-	public NetworkWorkerThread(Socket s, UUID uuid) {
-		this.socket = s;
-		this.connectionUUID = uuid;
-	}
+	public Timer timer = new Timer();
 
-	Timer timer = new Timer();
-	public long a = 0;
-	class TimeoutTask extends TimerTask {
-		long b;
-		TimeoutTask(long a) {
-			this.b = a;
-		}
-		@Override
-		public void run() {
-			if(a == b && isRunning) {
-				try {
-					isRunning = false;
-					is.close();
-					os.close();
-					socket.close();
-					if(!hasReceivedGenericDisconnectPacket) {
-						EventHandler.pollPacket(Packet.CDisconnectPacket(), NetworkWorkerThread.this);
-					}
-					Logger.log("Player with Connection UUID " + connectionUUID + " and I.P address of " + socket.getInetAddress() + " has timed out!");
-				} catch (Exception e) {
-					e.printStackTrace();
-					System.exit(-1);
-				}
-			}
-		}
+	public NetworkWorkerThread(Socket socket, UUID connectionUUID) {
+		this.socket = socket;
+		this.connectionUUID = connectionUUID;
 	}
 
 	class TickTask extends TimerTask {
@@ -58,74 +34,102 @@ public class NetworkWorkerThread extends Thread {
 		}
 	}
 
-	public void shutdown(String reason) {
-		Logger.log("SHUTTING DOWN THREAD " + connectionUUID + " DUE TO REASON: " + reason);
-		try {
-			isRunning = false;
-			is.close();
-			os.close();
-			socket.close();
-			if(!hasReceivedGenericDisconnectPacket) {
-				EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
+	public long lastPingReceived = new Date().getTime();
+	boolean improperDisconnect = false;
+	class TimeoutTask extends TimerTask {
+		@Override
+		public void run() {
+			if((new Date().getTime() - lastPingReceived) > 10000) {
+				shutdown("Connection has timed out!");
+				return;
 			}
-		} catch (Exception e) {
-			System.exit(-1);
+			timer.schedule(new TimeoutTask(), 1000);
 		}
 	}
 
 	@Override
 	public void run() {
 		try {
-			Logger.log("Player with Connection UUID " + connectionUUID + " has attempted to connect with an I.P address of " + socket.getInetAddress());
 			is = socket.getInputStream();
 			os = socket.getOutputStream();
 			timer.schedule(new TickTask(), 1000);
-			sendJSON(Packet.SStatusPacket());
-			while(socket.isConnected() && socket.isBound() && !socket.isClosed()) {	//TODO FIX PROBLEM WHERE PACKETS ARE SKIPPED FROM CLIENT DUE TO NON 1:1 I/O
-				a++;
-				timer.schedule(new TimeoutTask(a), 5000);
+			timer.schedule(new TimeoutTask(), 1000);
+			while (socket.isBound() && socket.isConnected() && !socket.isClosed()) {
 				JSONObject json = receiveJSON();
-				if(json==null) {continue;}
-				System.out.println(json.toString(1));
+				if(json == null) continue;
+				System.out.println(json);
+				if(json.get(Packet.packet_type).equals(Packet.CPingPacket)) {
+					lastPingReceived = new Date().getTime();
+				}
 				EventHandler.pollPacket(json, this);
 			}
-			if(!hasReceivedGenericDisconnectPacket) {
+			if(!improperDisconnect) {
+				improperDisconnect = true;
 				EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
-			}
-			if(!isRunning) {
-				return;
 			}
 			is.close();
 			os.close();
 			socket.close();
-			Logger.log("Player with Connection UUID " + connectionUUID + " and I.P address of " + socket.getInetAddress() + " has disconnected!");
-		} catch(Exception e) {}
-	}
-	
-	public void sendJSON(JSONObject jsonObject) {
-		try {
-			if(os==null) {
-				return;
+		} catch(Exception e) {
+			System.out.println("There was a fatal error on network worker thread " + connectionUUID.toString() + " due to the following exception:");
+			e.printStackTrace();
+			if(!improperDisconnect) {
+				improperDisconnect = true;
+				EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
 			}
+			System.out.println("The player has been cleared from the game server but the thread may or may not shutdown correctly.");
+		}
+	}
+
+	public void shutdown() {
+		try {
+			is.close();
+			os.close();
+			socket.close();
+		} catch (Exception e) {e.printStackTrace();}
+		if(!improperDisconnect) {
+			improperDisconnect = true;
+			EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
+		}
+	}
+
+	public void shutdown(String message) {
+		System.out.println("ON THREAD SHUTDOWN MESSAGE: " + message);
+		try {
+			is.close();
+			os.close();
+			socket.close();
+		} catch (Exception e) {e.printStackTrace();}
+		if(!improperDisconnect) {
+			improperDisconnect = true;
+			EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
+		}
+	}
+
+	public void sendJSON(JSONObject json) {
+		if(!(socket.isConnected() && socket.isBound() && !socket.isClosed())) {
+			return;
+		}
+		try {
 			ObjectOutputStream o = new ObjectOutputStream(os);
-	        o.writeObject(jsonObject.toString());
-	        os.flush();
-		} catch(Exception e) {}
+			o.writeUTF(json.toString());
+			o.flush();
+			os.flush();
+		} catch(Exception ignored) {}
 	}
-	
+
 	public JSONObject receiveJSON() {
+		if(!(socket.isConnected() && socket.isBound() && !socket.isClosed())) {
+			return null;
+		}
 		try {
-			if(is==null) {
-				return null;
-			}
 			ObjectInputStream i = new ObjectInputStream(is);
-			String line = null;
-			line = (String) i.readObject();
-			JSONObject jsonObject = new JSONObject(line);
-			return jsonObject;
-		} catch (Exception e) {
+			String line;
+			line = i.readUTF();
+			return new JSONObject(line);
+		} catch (Exception ignored) {
 			return null;
 		}
 	}
-	
+
 }

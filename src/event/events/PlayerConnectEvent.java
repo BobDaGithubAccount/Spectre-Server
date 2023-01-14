@@ -23,7 +23,7 @@ public class PlayerConnectEvent implements IEvent {
             return false;
         }
 
-        Spectre.addPlayer(new Player(0, 0, 0, 0, 0, 0, (String) json.getString("player_name"), nwt.connectionUUID));
+        Spectre.players.put(nwt.connectionUUID, new Player(0, 10, 0, 0, 0, 0, json.getString("player_name"), nwt.connectionUUID));
 
         System.out.println(Spectre.getPlayers());
 

@@ -3,16 +3,18 @@ package networking;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
 import java.util.UUID;
 
 import config.Settings;
+import lib.json.JSONObject;
 
 public class NetworkDelegatorThread extends Thread {
 
 	public boolean canRun = true;
 	
-	HashMap<UUID, NetworkWorkerThread> connections = new HashMap<UUID, NetworkWorkerThread>();
+	public HashMap<UUID, NetworkWorkerThread> connections = new HashMap<UUID, NetworkWorkerThread>();
 	
 	ServerSocket ss;
 	
