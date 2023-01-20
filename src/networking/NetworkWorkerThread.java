@@ -35,12 +35,13 @@ public class NetworkWorkerThread extends Thread {
 	}
 
 	public long lastPingReceived = new Date().getTime();
-	boolean improperDisconnect = false;
+	public boolean disconnected = false;
+	public boolean isDisconnected = false;
 	class TimeoutTask extends TimerTask {
 		@Override
 		public void run() {
 			if((new Date().getTime() - lastPingReceived) > 10000) {
-				shutdown("Connection has timed out!");
+				shutdown();
 				return;
 			}
 			timer.schedule(new TimeoutTask(), 1000);
@@ -57,14 +58,13 @@ public class NetworkWorkerThread extends Thread {
 			while (socket.isBound() && socket.isConnected() && !socket.isClosed()) {
 				JSONObject json = receiveJSON();
 				if(json == null) continue;
-				System.out.println(json);
-				if(json.get(Packet.packet_type).equals(Packet.CPingPacket)) {
+				if(json.getString(Packet.packet_type).equals(Packet.CPingPacket)) {
 					lastPingReceived = new Date().getTime();
 				}
 				EventHandler.pollPacket(json, this);
 			}
-			if(!improperDisconnect) {
-				improperDisconnect = true;
+			if(!disconnected) {
+				disconnected = true;
 				EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
 			}
 			is.close();
@@ -73,8 +73,8 @@ public class NetworkWorkerThread extends Thread {
 		} catch(Exception e) {
 			System.out.println("There was a fatal error on network worker thread " + connectionUUID.toString() + " due to the following exception:");
 			e.printStackTrace();
-			if(!improperDisconnect) {
-				improperDisconnect = true;
+			if(!disconnected) {
+				disconnected = true;
 				EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
 			}
 			System.out.println("The player has been cleared from the game server but the thread may or may not shutdown correctly.");
@@ -87,8 +87,8 @@ public class NetworkWorkerThread extends Thread {
 			os.close();
 			socket.close();
 		} catch (Exception e) {e.printStackTrace();}
-		if(!improperDisconnect) {
-			improperDisconnect = true;
+		if(!disconnected) {
+			disconnected = true;
 			EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
 		}
 	}
@@ -100,8 +100,8 @@ public class NetworkWorkerThread extends Thread {
 			os.close();
 			socket.close();
 		} catch (Exception e) {e.printStackTrace();}
-		if(!improperDisconnect) {
-			improperDisconnect = true;
+		if(!disconnected) {
+			disconnected = true;
 			EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
 		}
 	}

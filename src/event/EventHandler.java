@@ -15,14 +15,13 @@ public class EventHandler {
 
     public static void pollPacket(JSONObject json, NetworkWorkerThread nwt) {
         try {
-            ArrayList<IEvent> eventsToPoll = events.get(json.get(Packet.packet_type));
-            System.out.println(eventsToPoll);
+            ArrayList<IEvent> eventsToPoll = events.get(json.getString(Packet.packet_type));
             if (eventsToPoll == null) {
                 return;
             }
             for (IEvent eventHook : eventsToPoll) {
-                boolean shouldContinue = eventHook.run(json, nwt);
-                if (!shouldContinue) {
+                boolean shouldCancel = eventHook.run(json, nwt);
+                if (shouldCancel) {
                     break;
                 }
             }

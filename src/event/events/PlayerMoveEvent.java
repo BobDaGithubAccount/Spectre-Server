@@ -35,10 +35,10 @@ public class PlayerMoveEvent implements IEvent {
         player.roll = roll;
         Spectre.players.put(connectionUUID, player);
         for(Map.Entry<UUID, Player> p : Spectre.players.entrySet()) {
-            if(!p.getKey().equals(player.connectionUUID) && !p.getValue().name.equals(player.name)) {
+            if(!p.getKey().equals(connectionUUID) && !p.getValue().name.equals(player.name)) {
                 Main.ndt.connections.get(p.getKey()).sendJSON(Packet.SMovePacket(x,y,z,pitch,yaw,roll,player.name,connectionUUID));
             }
         }
-        return true;
+        return false;
     }
 }
