@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/event/events/PlayerMoveEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/event/events/PlayerMoveEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/networking/NetworkWorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/networking/NetworkWorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/EventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/event/events/PlayerConnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/events/PlayerConnectEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/event/events/PlayerDisconnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/events/PlayerDisconnectEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerMoveEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/events/PlayerMoveEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/networking/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/Packet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -35,8 +35,27 @@ public class Packet {
 		return packet;
 	}
 
+	public static String SConnectPacket = "S-CONNECT";
+	public static JSONObject SConnectPacket(String name, UUID uuid) {
+		JSONObject packet = new JSONObject();
+		packet.put(packet_type, SConnectPacket);
+		packet.put(protocol_version, protocolVersion);
+		packet.put("name", name);
+		packet.put("uuid", uuid.toString());
+		return packet;
+	}
+	public static String SDisconnectPacket = "S-DISCONNECT";
+	public static JSONObject SDisconnectPacket(String name, UUID uuid) {
+		JSONObject packet = new JSONObject();
+		packet.put(packet_type, SDisconnectPacket);
+		packet.put(protocol_version, protocolVersion);
+		packet.put("name", name);
+		packet.put("uuid", uuid.toString());
+		return packet;
+	}
+
 	public static String SMovePacket = "S-MOVE";
-	public static JSONObject SMovePacket(float x, float y, float z, float pitch, float yaw, float roll, String name, UUID connectionUUID) {
+	public static JSONObject SMovePacket(float x, float y, float z, float pitch, float yaw, float roll, String name, UUID uuid) {
 		JSONObject packet = new JSONObject();
 		packet.put(packet_type, SMovePacket);
 		packet.put(protocol_version, protocolVersion);
@@ -47,15 +66,14 @@ public class Packet {
 		packet.put("yaw", yaw);
 		packet.put("roll", roll);
 		packet.put("name", name);
-		packet.put("connectionUUID", connectionUUID.toString());
+		packet.put("uuid", uuid.toString());
 		return packet;
 	}
-
-
 
 	//
 	//	CLIENT
 	//
+
 	public static String CPingPacket = "C-PING";
 	public static JSONObject CPingPacket() {
 		JSONObject packet = new JSONObject();
@@ -66,11 +84,11 @@ public class Packet {
 	}
 
 	public static String CConnectPacket = "C-CONNECT";
-	public static JSONObject CConnectPacket() {
+	public static JSONObject CConnectPacket(String name) {
 		JSONObject packet = new JSONObject();
 		packet.put(packet_type, CConnectPacket);
 		packet.put(protocol_version, protocolVersion);
-		packet.put("player_name", UUID.randomUUID().toString());
+		packet.put("name", name);
 		return packet;
 	}
 	public static String CDisconnectPacket = "C-DISCONNECT";
