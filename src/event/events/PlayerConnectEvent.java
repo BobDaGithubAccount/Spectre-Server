@@ -27,7 +27,7 @@ public class PlayerConnectEvent implements IEvent {
             nwt.shutdown("Protocol version incompatible between server and client - S: " + Packet.protocolVersion + " C:" + (json.getInt(Packet.protocol_version)));
             return true;
         }
-
+        nwt.sendJSON(Packet.SInitPacket());
         Player player = new Player(0, 10, 0, 0, 0, 0, json.getString("name"), nwt.connectionUUID);
         Spectre.players.put(nwt.connectionUUID, player);
         for(Map.Entry<UUID, Player> p : Spectre.players.entrySet()) {

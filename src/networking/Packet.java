@@ -1,6 +1,7 @@
 package networking;
 
 import config.Settings;
+import gamelogic.Spectre;
 import lib.json.JSONObject;
 
 import java.util.Date;
@@ -67,6 +68,15 @@ public class Packet {
 		packet.put("roll", roll);
 		packet.put("name", name);
 		packet.put("uuid", uuid.toString());
+		return packet;
+	}
+
+	public static String SInitPacket = "S-INIT";
+	public static JSONObject SInitPacket() {
+		JSONObject packet = new JSONObject();
+		packet.put(packet_type, SInitPacket);
+		packet.put(protocol_version, protocolVersion);
+		packet.put("players", Spectre.players);
 		return packet;
 	}
 

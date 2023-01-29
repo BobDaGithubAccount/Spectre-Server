@@ -15,7 +15,11 @@ public class EventHandler {
 
     public static void pollPacket(JSONObject json, NetworkWorkerThread nwt) {
         try {
-            ArrayList<IEvent> eventsToPoll = events.get(json.getString(Packet.packet_type));
+            String packet_type = json.getString(Packet.packet_type);
+            if(!events.containsKey(packet_type)) {
+                return;
+            }
+            ArrayList<IEvent> eventsToPoll = events.get(packet_type);
             if (eventsToPoll == null) {
                 return;
             }
