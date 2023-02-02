@@ -1,17 +1,17 @@
 package networking;
 
 import event.EventHandler;
+import gamelogic.Spectre;
+import gamelogic.entity.Player;
 import lib.json.JSONObject;
+import main.Main;
 
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.UUID;
+import java.util.*;
 
 public class NetworkWorkerThread extends Thread {
 
@@ -132,4 +132,11 @@ public class NetworkWorkerThread extends Thread {
 		}
 	}
 
+	public void broadcastJSON(JSONObject packet) {
+		for(Map.Entry<UUID, Player> p : Spectre.players.entrySet()) {
+			if(!p.getKey().equals(connectionUUID)) {
+				Main.ndt.connections.get(p.getKey()).sendJSON(packet);
+			}
+		}
+	}
 }
