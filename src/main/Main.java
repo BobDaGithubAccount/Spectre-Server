@@ -1,17 +1,13 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import commands.HelpCommand;
-import commands.ICommand;
-import commands.PlayerListCommand;
-import commands.StopCommand;
+import commands.*;
 import config.Settings;
 import event.EventHandler;
-import gamelogic.Spectre;
 import logging.Logger;
 import networking.NetworkDelegatorThread;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -25,6 +21,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Logger.log(Settings.name + " " + Settings.version + " is starting");
+//		Spectre.initScene();
 		ndt.start();
 		try {
 			init();
@@ -32,12 +29,21 @@ public class Main {
 			
 			while(canRun) {
 				String line = scanner.nextLine();
+				String[] words = line.split(" ");
+				if(words.length == 0) {continue;}
+				String label = words[0];
+				words[0] = "";
+				String args1 = "";
+				for(String s : words) {
+					args1 = args1 + s;
+				}
+				String[] arguments = args1.split(" ");
 				boolean commandFound = false;
 				
 				for(ICommand command : commands) {
-					if(command.getName().equalsIgnoreCase(line)) {
+					if(command.getName().equalsIgnoreCase(label)) {
 						commandFound = true;
-						command.run();
+						command.run(arguments);
 						break;
 					}
 				}
@@ -57,6 +63,9 @@ public class Main {
 		commands.add(new HelpCommand());
 		commands.add(new StopCommand());
 		commands.add(new PlayerListCommand());
+		commands.add(new SaveLevelCommand());
+		commands.add(new LoadLevelCommand());
+		commands.add(new InitSceneCommand());
 		EventHandler.init();
 	}
 

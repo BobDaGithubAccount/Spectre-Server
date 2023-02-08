@@ -15,7 +15,7 @@ public class PlayerListCommand implements ICommand {
     }
 
     @Override
-    public void run() {
+    public void run(String[] args) {
         Logger.log("Players:");
         System.out.println(Spectre.getPlayers());
     }

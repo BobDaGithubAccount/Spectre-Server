@@ -4,11 +4,9 @@ import event.IEvent;
 import gamelogic.Spectre;
 import gamelogic.entity.Player;
 import lib.json.JSONObject;
-import main.Main;
 import networking.NetworkWorkerThread;
 import networking.Packet;
 
-import java.util.Map;
 import java.util.UUID;
 
 public class PlayerMoveEvent implements IEvent {

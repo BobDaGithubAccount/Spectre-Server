@@ -16,7 +16,7 @@ public class HelpCommand implements ICommand {
 	}
 
 	@Override
-	public void run() {
+	public void run(String[] args) {
 		for(ICommand command : Main.commands) {
 			Logger.log(command.getName() + " | " + command.getDescription());
 		}

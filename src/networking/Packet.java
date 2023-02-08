@@ -45,6 +45,15 @@ public class Packet {
 		packet.put("uuid", uuid.toString());
 		return packet;
 	}
+
+	public static String SInitPacket = "S-INIT";
+	public static JSONObject SInitPacket() {
+		JSONObject packet = new JSONObject();
+		packet.put(packet_type, SInitPacket);
+		packet.put(protocol_version, protocolVersion);
+		packet.put("scene", Spectre.scene);
+		return packet;
+	}
 	public static String SDisconnectPacket = "S-DISCONNECT";
 	public static JSONObject SDisconnectPacket(String name, UUID uuid) {
 		JSONObject packet = new JSONObject();

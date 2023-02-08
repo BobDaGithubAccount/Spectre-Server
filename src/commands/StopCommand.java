@@ -15,7 +15,7 @@ public class StopCommand implements ICommand {
 	}
 
 	@Override
-	public void run() {
+	public void run(String[] args) {
 		Main.scanner.close();
 		Main.ndt.shutdown();
 		Main.canRun = false;
