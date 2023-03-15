@@ -2,7 +2,7 @@ package main;
 
 import commands.*;
 import config.Settings;
-import event.EventHandler;
+import gamelogic.event.EventHandler;
 import logging.Logger;
 import networking.NetworkDelegatorThread;
 
@@ -20,6 +20,7 @@ public class Main {
 	public static boolean canRun = true;
 	
 	public static void main(String[] args) {
+		Logger.init();
 		Logger.log(Settings.name + " " + Settings.version + " is starting");
 //		Spectre.initScene();
 		ndt.start();
@@ -57,6 +58,7 @@ public class Main {
 				e.printStackTrace();
 			}
 		}
+		Logger.shutdown();
 	}
 	
 	public static void init() {

@@ -1,0 +1,14 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+Plugin YML: 
+name: testPlugin
+main_class: testFolder.Main
+author: Jephacake
+version: 1.0
+spectre_version: 1.0
+description: yes
+
+Loaded plugins!
+Do 'help' for a list of commands

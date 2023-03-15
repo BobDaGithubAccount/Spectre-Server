@@ -1,6 +1,6 @@
-package event.events;
+package gamelogic.event.gameEvents;
 
-import event.IEvent;
+import gamelogic.event.IEvent;
 import gamelogic.Spectre;
 import gamelogic.entity.Player;
 import lib.json.JSONObject;

@@ -1,6 +1,6 @@
 package networking;
 
-import event.EventHandler;
+import gamelogic.event.EventHandler;
 import gamelogic.Spectre;
 import gamelogic.entity.Player;
 import lib.json.JSONObject;

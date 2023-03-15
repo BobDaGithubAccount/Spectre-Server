@@ -3,15 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/PlayerListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/PlayerListCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/StopCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerConnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/events/PlayerConnectEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerMoveEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/events/PlayerMoveEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamelogic/Spectre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Spectre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event/IEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/IEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerConnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerConnectEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerDisconnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerDisconnectEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerMoveEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerMoveEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logging/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/networking/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/Packet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -52,13 +51,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/duckb/eclipse-workspace/Spectre-Server/src/lib/vector",
+    "last_opened_file_path": "C:/Users/duckb/eclipse-workspace/Spectre-Server/src/api/events",
     "settings.editor.selected.configurable": "editor.preferences.folding"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\duckb\eclipse-workspace\Spectre-Server\src\api\events" />
       <recent name="C:\Users\duckb\eclipse-workspace\Spectre-Server\src\lib\vector" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="api.networking" />
     </key>
   </component>
   <component name="RunManager">

@@ -1,4 +1,4 @@
-package event;
+package gamelogic.event;
 
 import lib.json.JSONObject;
 import networking.NetworkWorkerThread;
