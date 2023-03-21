@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/IEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/IEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerConnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerConnectEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerDisconnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerDisconnectEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/events/PlayerMoveEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerMoveEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logging/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +40,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/duckb/eclipse-workspace/Spectre-Server/src/api/events",
-    "settings.editor.selected.configurable": "editor.preferences.folding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/duckb/eclipse-workspace/Spectre-Server/src/api/events&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\duckb\eclipse-workspace\Spectre-Server\src\api\events" />
