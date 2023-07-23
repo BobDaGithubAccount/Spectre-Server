@@ -1,0 +1,3 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...

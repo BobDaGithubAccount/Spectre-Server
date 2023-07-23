@@ -52,6 +52,7 @@ public class Packet {
 		packet.put(packet_type, SInitPacket);
 		packet.put(protocol_version, protocolVersion);
 		packet.put("scene", Spectre.scene);
+		packet.put("level", Spectre.level);
 		return packet;
 	}
 	public static String SDisconnectPacket = "S-DISCONNECT";

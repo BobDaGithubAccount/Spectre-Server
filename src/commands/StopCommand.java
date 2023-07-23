@@ -1,5 +1,6 @@
 package commands;
 
+import logging.Logger;
 import main.Main;
 
 public class StopCommand implements ICommand {
@@ -19,6 +20,7 @@ public class StopCommand implements ICommand {
 		Main.scanner.close();
 		Main.ndt.shutdown();
 		Main.canRun = false;
+		Logger.shutdown();
 		System.exit(0);
 	}
 

@@ -2,10 +2,15 @@ package gamelogic;
 
 import gamelogic.entity.Entity;
 import gamelogic.entity.Player;
-import lib.vector.Vector3f;
+import lib.utils.FileUtils;
 import logging.Logger;
+import networking.NetworkDelegatorThread;
+import res.ResourceClass;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,69 +21,52 @@ public class Spectre {
     public static HashMap<UUID, Player> players = new HashMap<UUID, Player>();
     public static HashMap<String, HashMap<String, Entity>> scene = new HashMap<String, HashMap<String, Entity>>();
 
-    //TEST
-    public static void initScene() {
-        scene = new HashMap<String, HashMap<String, Entity>>();
-        initParent("dragon1");
-        pushEntity(new Entity("dragon", "dragon1", new Vector3f(0,0,0), new Vector3f(0,0,0), 1));
-    }
+    public static String level;
 
     public static void loadLevel(String name) {
         try {
-            Logger.log("Loading level " + name);
-            File folder = new File(new File(Spectre.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent()+"/levels/");
-            folder.mkdirs();
-            System.out.println(folder);
-            File file = new File(folder.getPath() + "/" + name + ".slf");
-            System.out.println(file);
-            FileInputStream fis = new FileInputStream(file);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            scene = (HashMap<String, HashMap<String, Entity>>) ois.readObject();
-            ois.close();
-            System.out.println(scene);
-        } catch(Exception e) {
-            e.printStackTrace();
+            File jarFile = new File(NetworkDelegatorThread.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+            File folder = jarFile.getParentFile();
+            File savesFolder = new File(folder.getPath() + "/saves");
+            if(!savesFolder.exists()) {
+                sterilizeFolder();
+                Logger.log("Saves folder didn't exist & default configuration used! Designated folder: " + savesFolder.getPath());
+            }
+            File levelFile = new File(savesFolder.getPath() + "/" + name + ".level");
+            if(!levelFile.exists()) {
+                sterilizeFolder();
+                throw new Exception("Specified level file '" + name + "' doesn't exist!");
+            }
+            level = new String(FileUtils.readBytesFromFile(levelFile.getPath()), StandardCharsets.UTF_8);
+        }
+        catch(Exception e) {
+            Logger.log("There was an exception loading the server level: ");
+            Logger.log(e.getMessage());
+            Logger.log("Shutting down!");
+            System.exit(-1);
         }
     }
 
-    public static void dumpLevel(String name) {
+    private static void sterilizeFolder() {
         try {
-            Logger.log("Saving level " + name);
-            File folder = new File(new File(Spectre.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent()+"/levels/");
-            folder.mkdirs();
-            System.out.println(folder);
-            File file = new File(folder.getPath() + "/" + name + ".slf");
-            file.delete();
-            file.createNewFile();
-            System.out.println(file);
-            FileOutputStream fos = new FileOutputStream(file);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(scene);
-            oos.close();
-            System.out.println(scene);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void pushEntity(Entity instance) {
-        HashMap<String, Entity> instances = scene.get(instance.getParent());
-        instances.put(instance.getName(), instance);
-        scene.put(instance.getParent(), instances);
-    }
-
-    public static void popEntity(String parent, String name) {
-        HashMap<String, Entity> instances = scene.get(parent);
-        instances.remove(name);
-        scene.put(parent, instances);
-    }
-
-    public static void initParent(String parent) {
-        scene.put(parent, new HashMap<String, Entity>());
-    }
-
-    public static void removeParent(String parent) {
-        scene.remove(parent);
+            File jarFile = new File(NetworkDelegatorThread.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+            File folder = jarFile.getParentFile();
+            File savesFolder = new File(folder.getPath() + "/saves");
+            String fileOutsideJar = savesFolder.getPath() + "/level.level";
+            String fileInsideJar = "level.level";
+            savesFolder.mkdirs();
+            InputStream inputStream = ResourceClass.class.getResourceAsStream(fileInsideJar);
+            File outputFile = new File(fileOutsideJar);
+            FileOutputStream outputStream = new FileOutputStream(outputFile);
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+                outputStream.flush();
+            }
+            inputStream.close();
+            outputStream.close();
+        } catch(Exception ignored){}
     }
 
     public static ArrayList<Player> getPlayers() {

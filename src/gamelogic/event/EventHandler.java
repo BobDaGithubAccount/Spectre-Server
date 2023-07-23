@@ -20,6 +20,7 @@ public class EventHandler {
     public static HashMap<String, ArrayList<IEvent>> events = new HashMap<String, ArrayList<IEvent>>();
 
     public static void pollPacket(JSONObject json, NetworkWorkerThread nwt) {
+        Logger.log("Received packet: " + json.toString());
         try {
             String packet_type = json.getString(Packet.packet_type);
             if(!events.containsKey(packet_type)) {
@@ -37,7 +38,6 @@ public class EventHandler {
             }
         } catch(Exception e) {
             e.printStackTrace();
-            return;
         }
     }
 
@@ -75,7 +75,6 @@ public class EventHandler {
     private static String main = "";
     public static void initPlugins() throws Exception {
         Logger.log("Loading plugins...");
-        Logger.log("Loading plugins...");
         File jarFile = new File(Logger.class.getProtectionDomain().getCodeSource().getLocation().toURI());
         File pluginsFolder = new File(jarFile.getParent() + "/plugins");
         pluginsFolder.mkdirs();
@@ -101,9 +100,9 @@ public class EventHandler {
                 String yml = "";
                 String line;
                 while((line = br.readLine())!=null) {
-                    yml = yml + line + System.lineSeparator();
+                    yml = yml + line + " ";
                 }
-                Logger.log("Plugin YML: " + System.lineSeparator() + yml);
+                yml = yml.substring(0, yml.length() - 1);
                 br.close();
                 Plugin p;
                 name = "";
@@ -114,7 +113,6 @@ public class EventHandler {
                 main = "";
                 String[] words = yml.split(" ");
                 for(int a = 0; a < words.length - 1; a = a + 2) {
-                    Logger.log(words[a]);
                     if(words[a].equals("name:")) {
                         name = words[a+1];
                         continue;
@@ -139,17 +137,11 @@ public class EventHandler {
                         main = words[a+1];
                     }
                 }
-                try {
-                    Logger.log("Parsed name as " + name);
-                    Logger.log("Parsed author as " + author);
-                    Logger.log("Parsed description as " + description);
-                    Logger.log("Parsed version as " + version);
-                    Logger.log("Parsed spectre_version as " + spectre_version);
-                    Logger.log("Parsed main as " + main);
-                } catch(Exception ignored) {}
                 if(name.equals("") || author.equals("") || description.equals("") || version.equals("") || spectre_version.equals("") || main.equals("")) {
                     throw new Exception("Not all required tokens were within the plugin YAML.");
                 }
+                //TODO
+                Logger.log(name + " SC-" + spectre_version + "|V-" + version + " loaded successfully!");
             }
             catch(Exception e) {
                 e.printStackTrace();
@@ -160,4 +152,5 @@ public class EventHandler {
         Logger.log("Loaded plugins!");
     }
 
+    //TODO Plugin support
 }

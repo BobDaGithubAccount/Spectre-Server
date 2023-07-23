@@ -2,6 +2,7 @@ package main;
 
 import commands.*;
 import config.Settings;
+import gamelogic.Spectre;
 import gamelogic.event.EventHandler;
 import logging.Logger;
 import networking.NetworkDelegatorThread;
@@ -22,7 +23,7 @@ public class Main {
 	public static void main(String[] args) {
 		Logger.init();
 		Logger.log(Settings.name + " " + Settings.version + " is starting");
-//		Spectre.initScene();
+		Spectre.loadLevel(Settings.levelName);
 		ndt.start();
 		try {
 			init();
@@ -65,9 +66,7 @@ public class Main {
 		commands.add(new HelpCommand());
 		commands.add(new StopCommand());
 		commands.add(new PlayerListCommand());
-		commands.add(new SaveLevelCommand());
 		commands.add(new LoadLevelCommand());
-		commands.add(new InitSceneCommand());
 		EventHandler.init();
 	}
 

@@ -1,0 +1,11 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+testPlugin SC-1.0|V-1.0 loaded successfully!
+Loaded plugins!
+Do 'help' for a list of commands
+Received packet: {"protocol_version":1,"name":"1591eee0-628a-4fec-9f87-2dbd51dde8cc","packet_type":"C-CONNECT"}
+1591eee0-628a-4fec-9f87-2dbd51dde8cc joined the server with UUID 13b1a2d7-c19d-498d-b67b-686f8e24e4a2
+Received packet: {"protocol_version":1,"packet_type":"C-DISCONNECT"}
+1591eee0-628a-4fec-9f87-2dbd51dde8cc left the server with UUID 13b1a2d7-c19d-498d-b67b-686f8e24e4a2

@@ -115,6 +115,7 @@ public class NetworkWorkerThread extends Thread {
 			o.writeUTF(json.toString());
 			o.flush();
 			os.flush();
+			System.out.println(json.toString());
 		} catch(Exception ignored) {}
 	}
 
