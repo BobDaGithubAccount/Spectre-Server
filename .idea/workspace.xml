@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/config/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/config/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamelogic/Spectre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Spectre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerConnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerConnectEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/networking/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/Packet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +99,7 @@
       <workItem from="1690105337108" duration="2406000" />
       <workItem from="1690108082766" duration="779000" />
       <workItem from="1690190420798" duration="7132000" />
+      <workItem from="1690206016340" duration="1307000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,33 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+testPlugin SC-1.0|V-1.0 loaded successfully!
+Loaded plugins!
+Do 'help' for a list of commands
+194bac94-1c92-40a4-b7bd-a0e3d0b70b4e joined the server with UUID 20bd600b-409b-436b-9280-f92a479db1da and IP /127.0.0.1
+194bac94-1c92-40a4-b7bd-a0e3d0b70b4e left the server with UUID 20bd600b-409b-436b-9280-f92a479db1da
+109d9fef-c313-4ad1-87a6-70b43ebd5eac joined the server with UUID f7b71fa6-ba24-4e9d-8c09-fcfdcd8c05ec and IP /127.0.0.1
+552566a1-bbec-4363-8176-4fc8d5ac99b5 joined the server with UUID 6999d660-91b8-4124-a26d-750200eb1d49 and IP /127.0.0.1
+109d9fef-c313-4ad1-87a6-70b43ebd5eac left the server with UUID f7b71fa6-ba24-4e9d-8c09-fcfdcd8c05ec
+552566a1-bbec-4363-8176-4fc8d5ac99b5 left the server with UUID 6999d660-91b8-4124-a26d-750200eb1d49
+e9b61151-c62b-4c9b-8619-a35ecec836d8 joined the server with UUID cdd6c467-30ee-4755-8d7b-5874c9f94214 and IP /127.0.0.1
+e9b61151-c62b-4c9b-8619-a35ecec836d8 left the server with UUID cdd6c467-30ee-4755-8d7b-5874c9f94214
+b1e28a58-4948-43fe-aa71-bb06cce3a865 joined the server with UUID 17429a22-d80f-452f-8bde-ecd3ff57979a and IP /127.0.0.1
+b1e28a58-4948-43fe-aa71-bb06cce3a865 left the server with UUID 17429a22-d80f-452f-8bde-ecd3ff57979a
+862a2c5e-3c83-422d-b2aa-0f8b4d7b3070 joined the server with UUID 00576961-a9a8-4c1e-bcd1-ee08a95fb59c and IP /127.0.0.1
+e0bc4016-de17-4b6c-8eec-aeabf48343f3 joined the server with UUID 26ec0ecc-f522-41b8-9e4e-9ce851840706 and IP /127.0.0.1
+e0bc4016-de17-4b6c-8eec-aeabf48343f3 left the server with UUID 26ec0ecc-f522-41b8-9e4e-9ce851840706
+862a2c5e-3c83-422d-b2aa-0f8b4d7b3070 left the server with UUID 00576961-a9a8-4c1e-bcd1-ee08a95fb59c
+bfa532c0-5f97-4ab6-a317-3043946a6dae joined the server with UUID 58ac8eef-12e2-4219-8c82-5d959daef619 and IP /127.0.0.1
+ce984985-e6bf-4a82-bb2b-1095071694ae joined the server with UUID fac179a5-a364-4685-930d-5e60c7c3df03 and IP /127.0.0.1
+ce984985-e6bf-4a82-bb2b-1095071694ae left the server with UUID fac179a5-a364-4685-930d-5e60c7c3df03
+bfa532c0-5f97-4ab6-a317-3043946a6dae left the server with UUID 58ac8eef-12e2-4219-8c82-5d959daef619
+12af816b-17cd-4df0-949b-495e76a50bee joined the server with UUID 2a34d1ea-6a89-4346-98e6-f32491a3ef2e and IP /127.0.0.1
+8a9fa086-ce7e-4ccb-af36-3a8ccd8d11fa joined the server with UUID a6a1b2fb-9790-41ee-a3e5-a3cf890b0e3c and IP /127.0.0.1
+12af816b-17cd-4df0-949b-495e76a50bee left the server with UUID 2a34d1ea-6a89-4346-98e6-f32491a3ef2e
+8a9fa086-ce7e-4ccb-af36-3a8ccd8d11fa left the server with UUID a6a1b2fb-9790-41ee-a3e5-a3cf890b0e3c
+fa810c5f-a9fe-4b90-91fe-598cce69765f joined the server with UUID ad8f0044-9161-4d25-ac20-cea4b6d5d5b9 and IP /127.0.0.1
+7f3cfcdc-e826-4470-896e-0089fe409b6c joined the server with UUID c9e53468-eba9-4bc9-8b8b-8554293d43f4 and IP /127.0.0.1
+fa810c5f-a9fe-4b90-91fe-598cce69765f left the server with UUID ad8f0044-9161-4d25-ac20-cea4b6d5d5b9
+----------
