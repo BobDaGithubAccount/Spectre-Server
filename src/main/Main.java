@@ -5,6 +5,7 @@ import config.Settings;
 import gamelogic.Spectre;
 import gamelogic.event.EventHandler;
 import logging.Logger;
+import networking.HTTPServer;
 import networking.NetworkDelegatorThread;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class Main {
 		Logger.init();
 		Logger.log(Settings.name + " " + Settings.version + " is starting");
 		Spectre.loadLevel(Settings.levelName);
+		HTTPServer.init();
 		ndt.start();
 		try {
 			init();
@@ -59,7 +61,13 @@ public class Main {
 				e.printStackTrace();
 			}
 		}
+		shutdown();
+	}
+
+	public static void shutdown() {
 		Logger.shutdown();
+		scanner.close();
+		HTTPServer.shutdown();
 	}
 	
 	public static void init() {

@@ -10,7 +10,6 @@ import res.ResourceClass;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +20,7 @@ public class Spectre {
     public static HashMap<UUID, Player> players = new HashMap<UUID, Player>();
     public static HashMap<String, HashMap<String, Entity>> scene = new HashMap<String, HashMap<String, Entity>>();
 
-    public static String level;
+    public static byte[] level;
 
     public static void loadLevel(String name) {
         try {
@@ -37,7 +36,8 @@ public class Spectre {
                 sterilizeFolder();
                 throw new Exception("Specified level file '" + name + "' doesn't exist!");
             }
-            level = new String(FileUtils.readBytesFromFile(levelFile.getPath()), StandardCharsets.UTF_8);
+            level = FileUtils.readBytesFromFile(levelFile.getPath());
+//            level = new String(FileUtils.readBytesFromFile(levelFile.getPath()), StandardCharsets.UTF_8);
         }
         catch(Exception e) {
             Logger.log("There was an exception loading the server level: ");

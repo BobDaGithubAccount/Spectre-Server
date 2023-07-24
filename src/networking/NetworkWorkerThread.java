@@ -1,8 +1,8 @@
 package networking;
 
-import gamelogic.event.EventHandler;
 import gamelogic.Spectre;
 import gamelogic.entity.Player;
+import gamelogic.event.EventHandler;
 import lib.json.JSONObject;
 import main.Main;
 
@@ -14,7 +14,6 @@ import java.net.Socket;
 import java.util.*;
 
 public class NetworkWorkerThread extends Thread {
-
 	public Socket socket;
 	public UUID connectionUUID;
 	public InputStream is;
@@ -115,7 +114,6 @@ public class NetworkWorkerThread extends Thread {
 			o.writeUTF(json.toString());
 			o.flush();
 			os.flush();
-			System.out.println(json.toString());
 		} catch(Exception ignored) {}
 	}
 

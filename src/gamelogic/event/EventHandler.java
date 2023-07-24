@@ -20,7 +20,6 @@ public class EventHandler {
     public static HashMap<String, ArrayList<IEvent>> events = new HashMap<String, ArrayList<IEvent>>();
 
     public static void pollPacket(JSONObject json, NetworkWorkerThread nwt) {
-        Logger.log("Received packet: " + json.toString());
         try {
             String packet_type = json.getString(Packet.packet_type);
             if(!events.containsKey(packet_type)) {

@@ -6,29 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/api/networking/Packet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/api/networking/Packet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/InitSceneCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/SaveLevelCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/StopCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/commands/StopCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/config/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/config/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/Spectre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/Spectre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/gameEvents/PlayerConnectEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/gameEvents/PlayerConnectEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/logging/Logger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/logging/Logger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/networking/NetworkDelegatorThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/networking/NetworkDelegatorThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/networking/NetworkWorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/networking/NetworkWorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/networking/Packet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/networking/Packet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/levels/devScene1.slf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/levelsdump.txt.slf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/logs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/InitSceneCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/SaveLevelCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/StopCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gamelogic/Spectre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Spectre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logging/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerConnectEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/gameEvents/PlayerConnectEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/networking/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/Packet.java" afterDir="false" />
@@ -123,6 +105,7 @@
       <workItem from="1690104878920" duration="412000" />
       <workItem from="1690105337108" duration="2406000" />
       <workItem from="1690108082766" duration="779000" />
+      <workItem from="1690190420798" duration="7132000" />
     </task>
     <servers />
   </component>

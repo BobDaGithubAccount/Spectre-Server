@@ -1,8 +1,8 @@
 package gamelogic.event.gameEvents;
 
-import gamelogic.event.IEvent;
 import gamelogic.Spectre;
 import gamelogic.entity.Player;
+import gamelogic.event.IEvent;
 import lib.json.JSONObject;
 import logging.Logger;
 import networking.NetworkWorkerThread;
@@ -29,7 +29,7 @@ public class PlayerConnectEvent implements IEvent {
         Player player = new Player(0, 10, 0, 0, 0, 0, json.getString("name"), nwt.connectionUUID);
         Spectre.players.put(nwt.connectionUUID, player);
         nwt.broadcastJSON(Packet.SConnectPacket(player.name, player.connectionUUID));
-        Logger.log(player.name + " joined the server with UUID " + nwt.connectionUUID);
+        Logger.log(player.name + " joined the server with UUID " + nwt.connectionUUID + " and IP " + nwt.socket.getInetAddress().toString());
         nwt.sendJSON(Packet.SInitPacket());
         return false;
     }
