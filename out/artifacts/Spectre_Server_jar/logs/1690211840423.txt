@@ -1,0 +1,12 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\artifacts\Spectre_Server_jar\plugins\testJar.jar
+testPlugin SC-1.0|V-1.0 loaded successfully!
+Loaded plugins!
+Do 'help' for a list of commands
+help | Returns a list of commands supported by the server
+stop | Halts the server
+list | Lists all players connected to the server and their primitive data, like position or rotation
+load | Loads a level of specified name from the /levels folder, if it exits. Usage: load <name-of-save>
+----------

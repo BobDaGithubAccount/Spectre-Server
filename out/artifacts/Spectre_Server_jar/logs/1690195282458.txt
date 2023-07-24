@@ -1,0 +1,20 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+testPlugin SC-1.0|V-1.0 loaded successfully!
+Loaded plugins!
+Do 'help' for a list of commands
+19cd480c-a234-442c-a567-9f96b771063d joined the server with UUID c388ba3b-0939-4652-81db-0850d0c49514 and IP /127.0.0.1
+19cd480c-a234-442c-a567-9f96b771063d left the server with UUID c388ba3b-0939-4652-81db-0850d0c49514
+03933640-078d-48a3-a45e-796adb7dd8a1 joined the server with UUID f6434af3-c82f-486b-9619-3ecf78bbdaa3 and IP /127.0.0.1
+03933640-078d-48a3-a45e-796adb7dd8a1 left the server with UUID f6434af3-c82f-486b-9619-3ecf78bbdaa3
+92852ae7-3f86-4cb4-969d-e15d75d7f3a6 joined the server with UUID 8dfac807-bac3-45a9-a623-4033783d5959 and IP /127.0.0.1
+92852ae7-3f86-4cb4-969d-e15d75d7f3a6 left the server with UUID 8dfac807-bac3-45a9-a623-4033783d5959
+910e49ab-49bc-4804-90f1-c4b79f928797 joined the server with UUID 771c5422-0927-479a-ae3c-9897097b041a and IP /127.0.0.1
+910e49ab-49bc-4804-90f1-c4b79f928797 left the server with UUID 771c5422-0927-479a-ae3c-9897097b041a
+42e2f578-08dc-4bee-87b0-c22778c28d1d joined the server with UUID ecc998a1-e84b-40e8-8801-5e4e0ac7f9c7 and IP /127.0.0.1
+Level fetched from IP /127.0.0.1:54149 intended for nwt with connectionUUID ecc998a1-e84b-40e8-8801-5e4e0ac7f9c7
+42e2f578-08dc-4bee-87b0-c22778c28d1d left the server with UUID ecc998a1-e84b-40e8-8801-5e4e0ac7f9c7
+c9d3714c-0a29-40a0-a3d8-f88400895979 joined the server with UUID f6b8b425-501e-4dbe-a7c3-d7f639686f46 and IP /127.0.0.1
+c9d3714c-0a29-40a0-a3d8-f88400895979 left the server with UUID f6b8b425-501e-4dbe-a7c3-d7f639686f46

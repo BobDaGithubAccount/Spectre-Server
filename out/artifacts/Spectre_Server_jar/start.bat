@@ -1,0 +1,1 @@
+start D:/jdk-17.0.6+10/bin/java.exe -jar Spectre-Server.jar
