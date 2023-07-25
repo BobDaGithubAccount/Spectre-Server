@@ -1,20 +1,16 @@
 package api;
 
+import api.events.Event;
+import api.events.EventHandler;
 import api.events.Listener;
 import command.CommandResponse;
 import command.ICommand;
+import gamelogic.event.EventManager;
 import logging.Logger;
 import main.Main;
 
 import java.io.File;
-
-
-//name: testPlugin
-//main_class: testFolder.Main
-//author: Jephacake
-//version: 1.0
-//spectre_version: 1.0
-//description: yes
+import java.lang.reflect.Method;
 
 public abstract class JavaPlugin {
 
@@ -50,11 +46,31 @@ public abstract class JavaPlugin {
     }
 
     protected boolean addEventListener(Listener listener) {
-        return false;
+        for (Method method : listener.getClass().getDeclaredMethods()) {
+            if (method.isAnnotationPresent(EventHandler.class) && method.getReturnType().equals(boolean.class)) {
+                Class<?>[] parameterTypes = method.getParameterTypes();
+                if (parameterTypes.length != 1 || parameterTypes[0] != Event.class) {
+                    throw new IllegalArgumentException(
+                            "Method " + method.getName() + " is annotated with @EventHandler but doesn't have correct arguments"
+                    );
+                }
+                EventManager.pluginEvents.add(method);
+            }
+        }
+        return true;
     }
 
     protected boolean removeEventListener(Listener listener) {
-        return false;
+        for (Method method : listener.getClass().getDeclaredMethods()) {
+            if (method.isAnnotationPresent(EventHandler.class) && method.getReturnType().equals(boolean.class)) {
+                Class<?>[] parameterTypes = method.getParameterTypes();
+                if (parameterTypes.length != 1 || parameterTypes[0] != Event.class) {
+                    continue;
+                }
+                EventManager.pluginEvents.remove(method);
+            }
+        }
+        return true;
     }
 
     protected boolean addCommand(ICommand command) {

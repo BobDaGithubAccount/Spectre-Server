@@ -3,7 +3,7 @@ package main;
 import command.*;
 import config.Settings;
 import gamelogic.Spectre;
-import gamelogic.event.EventHandler;
+import gamelogic.event.EventManager;
 import logging.Logger;
 import networking.HTTPServer;
 import networking.NetworkDelegatorThread;
@@ -26,7 +26,8 @@ public class Main {
 	public static File jarFile;
 
 	public static void main(String[] args) {
-		System.out.println("IGNORE THE WARNING AND DO NOT REPORT THE 'ISSUE' TO ME - THE PROJECT IS STAYING ON JAVA-17 INDEFINITELY AND THEREFORE THE SECURITY WARNING FOR THE SECURITY MANAGER (WHICH MANAGES SANDBOXING) PACKAGE BEING REMOVED IS NOTHING TO BE WORRIED ABOUT.");
+		System.out.println("IGNORE THE WARNING AND DO NOT REPORT THE 'ISSUE' TO ME");
+		System.out.println("THE PROJECT IS STAYING ON JAVA-17 INDEFINITELY AND THEREFORE THE SECURITY WARNING FOR THE SECURITY MANAGER \n(WHICH MANAGES SANDBOXING) PACKAGE BEING REMOVED IS NOTHING TO BE WORRIED ABOUT.");
 		jarFile = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().getFile());
 		Logger.init();
 		loadWhitelist();
@@ -45,11 +46,11 @@ public class Main {
 				if(words.length == 0) {continue;}
 				String label = words[0];
 				words[0] = "";
-				String args1 = "";
+				StringBuilder args1 = new StringBuilder();
 				for(String s : words) {
-					args1 = args1 + s;
+					args1.append(s);
 				}
-				String[] arguments = args1.split(" ");
+				String[] arguments = args1.toString().split(" ");
 				boolean commandFound = false;
 				
 				for(ICommand command : commands) {
@@ -83,7 +84,7 @@ public class Main {
 		commands.add(new StopCommand());
 		commands.add(new PlayerListCommand());
 		commands.add(new LoadLevelCommand());
-		EventHandler.init();
+		EventManager.init();
 	}
 
 	private static ArrayList<String> whitelistedDirectories = new ArrayList<String>();
@@ -104,10 +105,11 @@ public class Main {
 				bw.close();
 				whitelistedDirectories = backup_whitelistedDirectories;
 				File fatalError = new File(jarFile.getParent() + "/FATAL_ERROR.TXT");
+				fatalError.delete();
 				fatalError.createNewFile();
 				BufferedWriter bw2 = new BufferedWriter(new FileWriter(fatalError));
-				for(int x = 0; x < 1000; x++) {
-					bw2.write("WHITELIST YOUR JAVA DIRECTORY IN WHITELIST.TXT" + System.lineSeparator());
+				for(int x = 0; x < 10; x++) {
+					bw2.write("ENSURE YOUR JAVA DIRECTORY IS IN WHITELIST.TXT" + System.lineSeparator());
 					bw2.flush();
 				}
 				bw2.close();
@@ -177,128 +179,3 @@ public class Main {
 	}
 
 }
-
-
-//@Override
-//public void checkAccept(String host, int port) {
-//}
-//
-//@Override
-//public void checkAccess(Thread t) {
-//}
-//
-//@Override
-//public void checkAccess(ThreadGroup g) {
-//}
-//
-//@Override
-//public void checkConnect(String host, int port) {
-//}
-//
-//@Override
-//public void checkConnect(String host, int port, Object context) {
-//}
-//
-//@Override
-//public void checkCreateClassLoader() {
-//}
-//
-//@Override
-//public void checkDelete(String file) {
-//}
-//
-//@Override
-//public void checkExec(String cmd) {
-//}
-//
-//@Override
-//public void checkExit(int status) {
-//}
-//
-//@Override
-//public void checkLink(String lib) {
-//}
-//
-//@Override
-//public void checkListen(int port) {
-//}
-//
-//@Override
-//public void checkMulticast(InetAddress maddr) {
-//}
-//
-//@Override
-//@Deprecated
-//public void checkMulticast(InetAddress maddr, byte ttl) {
-//}
-//
-//@Override
-//public void checkPackageAccess(String pkg) {
-//}
-//
-//@Override
-//public void checkPackageDefinition(String pkg) {
-//}
-//
-//@Override
-//public void checkPermission(Permission perm) {
-//}
-//
-//@Override
-//public void checkPermission(Permission perm, Object context) {
-//}
-//
-//@Override
-//public void checkPrintJobAccess() {
-//}
-//
-//@Override
-//public void checkPropertiesAccess() {
-//}
-//
-//@Override
-//public void checkPropertyAccess(String key) {
-//}
-//
-//@Override
-//public void checkRead(FileDescriptor fd) {
-//}
-//
-//@Override
-//public void checkRead(String file) {
-//}
-//
-//@Override
-//public void checkRead(String file, Object context) {
-//}
-//
-//@Override
-//public void checkSecurityAccess(String target) {
-//}
-//
-//@Override
-//public void checkSetFactory() {
-//}
-//
-//@Override
-//public void checkWrite(FileDescriptor fd) {
-//}
-//
-//@Override
-//public void checkWrite(String file) {
-//}
-//
-//@Override
-//protected Class<?>[] getClassContext() {
-//	return new Class[0];
-//}
-//
-//@Override
-//public Object getSecurityContext() {
-//	return new Object();
-//}
-//
-//@Override
-//public ThreadGroup getThreadGroup() {
-//	return null;
-//}

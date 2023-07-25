@@ -1,6 +1,1 @@
-name: testPlugin
 main_class: testFolder.Main
-author: Jephacake
-version: 1.0
-spectre_version: 1.0
-description: yes

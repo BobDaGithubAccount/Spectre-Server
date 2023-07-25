@@ -1,7 +1,6 @@
 package command;
 
-import logging.Logger;
-import main.Main;
+import gamelogic.event.EventManager;
 
 public class StopCommand implements ICommand {
 
@@ -17,11 +16,7 @@ public class StopCommand implements ICommand {
 
 	@Override
 	public CommandResponse run(String[] args) {
-		Main.scanner.close();
-		Main.ndt.shutdown();
-		Main.canRun = false;
-		Logger.shutdown();
-		System.exit(0);
+		EventManager.stopServer();
 		return new CommandResponse(true);
 	}
 

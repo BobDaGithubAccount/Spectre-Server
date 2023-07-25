@@ -5,40 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/command/CommandResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/command/ICommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/events/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/events/Listener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/CommandResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testJar/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/Spectre-Server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/Spectre-Server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/whitelist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/whitelist.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FATAL_ERROR.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FATAL_ERROR.TXT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/api/JavaPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/api/JavaPlugin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/api/events/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/api/events/EventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/api/networking/Packet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/api/networking/Packet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/HelpCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/ICommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/LoadLevelCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/PlayerListCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/StopCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/Spectre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/Spectre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/logging/Logger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/logging/Logger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/command/StopCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/command/StopCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/networking/NetworkWorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/networking/NetworkWorkerThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/plugins/testJar.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/JavaPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/JavaPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/events/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/events/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/events/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/events/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/networking/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/networking/Packet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/LoadLevelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/LoadLevelCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/PlayerListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/PlayerListCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/StopCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamelogic/Spectre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Spectre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logging/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/StopCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/networking/NetworkDelegatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkDelegatorThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkWorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testJar/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/testJar/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testJar/.idea/artifacts/testJar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testJar/.idea/artifacts/testJar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testJar/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testJar/bin/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/testJar/bin/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testJar/src/testFolder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/testJar/src/testFolder/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +125,7 @@
       <workItem from="1690190420798" duration="7132000" />
       <workItem from="1690206016340" duration="2053000" />
       <workItem from="1690281214414" duration="2097000" />
-      <workItem from="1690293404914" duration="11366000" />
+      <workItem from="1690293404914" duration="16516000" />
     </task>
     <servers />
   </component>

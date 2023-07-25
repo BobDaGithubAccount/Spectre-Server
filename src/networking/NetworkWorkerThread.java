@@ -2,7 +2,7 @@ package networking;
 
 import gamelogic.Spectre;
 import gamelogic.entity.Player;
-import gamelogic.event.EventHandler;
+import gamelogic.event.EventManager;
 import lib.json.JSONObject;
 import main.Main;
 
@@ -60,11 +60,11 @@ public class NetworkWorkerThread extends Thread {
 				if(json.getString(Packet.packet_type).equals(Packet.CPingPacket)) {
 					lastPingReceived = new Date().getTime();
 				}
-				EventHandler.pollPacket(json, this);
+				EventManager.pollPacket(json, this);
 			}
 			if(!disconnected) {
 				disconnected = true;
-				EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
+				EventManager.pollPacket(Packet.CDisconnectPacket(), this);
 			}
 			is.close();
 			os.close();
@@ -74,7 +74,7 @@ public class NetworkWorkerThread extends Thread {
 			e.printStackTrace();
 			if(!disconnected) {
 				disconnected = true;
-				EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
+				EventManager.pollPacket(Packet.CDisconnectPacket(), this);
 			}
 			System.out.println("The player has been cleared from the game server but the thread may or may not shutdown correctly.");
 		}
@@ -88,7 +88,7 @@ public class NetworkWorkerThread extends Thread {
 		} catch (Exception e) {e.printStackTrace();}
 		if(!disconnected) {
 			disconnected = true;
-			EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
+			EventManager.pollPacket(Packet.CDisconnectPacket(), this);
 		}
 	}
 
@@ -101,7 +101,7 @@ public class NetworkWorkerThread extends Thread {
 		} catch (Exception e) {e.printStackTrace();}
 		if(!disconnected) {
 			disconnected = true;
-			EventHandler.pollPacket(Packet.CDisconnectPacket(), this);
+			EventManager.pollPacket(Packet.CDisconnectPacket(), this);
 		}
 	}
 

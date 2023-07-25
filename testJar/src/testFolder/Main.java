@@ -27,11 +27,12 @@ public class Main extends JavaPlugin implements Listener, ICommand {
     }
 
     @EventHandler
-    public void onPlayerConnectEvent(Event event) {
-        if(!event.getJson().getString(Packet.packet_type).equals(Packet.CConnectPacket)) {
-            return;
+    public boolean onPlayerConnectEvent(Event event) {
+        if(!event.json.getString(Packet.packet_type).equals(Packet.CConnectPacket)) {
+            return false;
         }
-        this.log(event.getJson().getString(Packet.));
+        this.log(event.json.getString(Packet.packet_type));
+        return false;
     }
 
     @Override
