@@ -1,0 +1,4 @@
+----------
+Spectre-Server v0.1 is starting
+There was a fatal error initialising the http server for s2c level serving. The error:
+java.lang.SecurityException: Access to C:\Users\duckb\AppData\Local\Temp\socket_1772208211 for delete is not allowed!

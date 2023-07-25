@@ -4,7 +4,7 @@ import gamelogic.entity.Entity;
 import gamelogic.entity.Player;
 import lib.utils.FileUtils;
 import logging.Logger;
-import networking.NetworkDelegatorThread;
+import main.Main;
 import res.ResourceClass;
 
 import java.io.File;
@@ -24,7 +24,7 @@ public class Spectre {
 
     public static void loadLevel(String name) {
         try {
-            File jarFile = new File(NetworkDelegatorThread.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+            File jarFile = Main.jarFile;
             File folder = jarFile.getParentFile();
             File savesFolder = new File(folder.getPath() + "/saves");
             if(!savesFolder.exists()) {
@@ -49,7 +49,7 @@ public class Spectre {
 
     private static void sterilizeFolder() {
         try {
-            File jarFile = new File(NetworkDelegatorThread.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+            File jarFile = Main.jarFile;
             File folder = jarFile.getParentFile();
             File savesFolder = new File(folder.getPath() + "/saves");
             String fileOutsideJar = savesFolder.getPath() + "/level.level";

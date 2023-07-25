@@ -1,7 +1,6 @@
 package api.networking;
 
 import config.Settings;
-import gamelogic.Spectre;
 import lib.json.JSONObject;
 
 import java.util.Date;
@@ -51,7 +50,7 @@ public class Packet {
 		JSONObject packet = new JSONObject();
 		packet.put(packet_type, SInitPacket);
 		packet.put(protocol_version, protocolVersion);
-		packet.put("scene", Spectre.scene);
+		packet.put("port" , Settings.httpPortNumber);
 		return packet;
 	}
 	public static String SDisconnectPacket = "S-DISCONNECT";

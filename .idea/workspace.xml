@@ -5,7 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/command/CommandResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/command/ICommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/events/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/events/Listener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/command/CommandResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testJar/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/Spectre-Server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/Spectre-Server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/api/events/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/api/events/EventHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/api/networking/Packet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/api/networking/Packet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/HelpCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/ICommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/LoadLevelCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/PlayerListCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/commands/StopCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/Spectre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/Spectre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/logging/Logger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/logging/Logger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/plugins/testJar.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/events/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/events/EventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/networking/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/networking/Packet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ICommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/LoadLevelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/LoadLevelCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/PlayerListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/PlayerListCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/StopCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/Spectre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/Spectre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logging/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/networking/NetworkDelegatorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/networking/NetworkDelegatorThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +64,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2JaioSb7gCe4IMNFINk7lxefq2O" />
   <component name="ProjectLevelVcsManager">
@@ -48,7 +81,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/duckb/eclipse-workspace/Spectre-Client",
+    "last_opened_file_path": "C:/Users/duckb/eclipse-workspace/Spectre-Server/src/api/events",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,17 +90,18 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.16800922",
-    "settings.editor.selected.configurable": "editor.preferences.folding",
+    "settings.editor.selected.configurable": "Errors",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\duckb\eclipse-workspace\Spectre-Server\src\res" />
       <recent name="C:\Users\duckb\eclipse-workspace\Spectre-Server\src\api\events" />
+      <recent name="C:\Users\duckb\eclipse-workspace\Spectre-Server\src\res" />
       <recent name="C:\Users\duckb\eclipse-workspace\Spectre-Server\src\lib\vector" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="api.command" />
       <recent name="api.networking" />
     </key>
   </component>
@@ -75,6 +109,7 @@
     <configuration name="Spectre-Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Spectre-Server" />
+      <option name="PROGRAM_PARAMETERS" value="D:/jdk-17.0.6+10" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,7 +133,9 @@
       <workItem from="1690105337108" duration="2406000" />
       <workItem from="1690108082766" duration="779000" />
       <workItem from="1690190420798" duration="7132000" />
-      <workItem from="1690206016340" duration="1562000" />
+      <workItem from="1690206016340" duration="2053000" />
+      <workItem from="1690281214414" duration="2097000" />
+      <workItem from="1690293404914" duration="11366000" />
     </task>
     <servers />
   </component>

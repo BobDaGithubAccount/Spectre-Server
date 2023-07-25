@@ -1,0 +1,8 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+There was an error while trying to load the plugin with file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+There isn't a plugin.yml that can be read! It needs to be at /plugin.yml
+Loaded plugins!
+Do 'help' for a list of commands

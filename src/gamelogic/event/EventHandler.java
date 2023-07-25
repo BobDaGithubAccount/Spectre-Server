@@ -1,20 +1,19 @@
 package gamelogic.event;
 
+import api.JavaPlugin;
 import gamelogic.event.gameEvents.PlayerConnectEvent;
 import gamelogic.event.gameEvents.PlayerDisconnectEvent;
 import gamelogic.event.gameEvents.PlayerMoveEvent;
 import lib.json.JSONObject;
 import logging.Logger;
+import main.Main;
 import networking.NetworkWorkerThread;
 import networking.Packet;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
-import java.util.jar.JarFile;
 
 public class EventHandler {
     public static HashMap<String, ArrayList<IEvent>> events = new HashMap<String, ArrayList<IEvent>>();
@@ -66,19 +65,13 @@ public class EventHandler {
         }
     }
 
-    private static String name = "";
-    private static String author = "";
-    private static String description = "";
-    private static String version = "";
-    private static String spectre_version = "";
-    private static String main = "";
+    public static ArrayList<JavaPlugin> plugins = new ArrayList<JavaPlugin>();
     public static void initPlugins() throws Exception {
         Logger.log("Loading plugins...");
-        File jarFile = new File(Logger.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+        File jarFile = Main.jarFile;
         File pluginsFolder = new File(jarFile.getParent() + "/plugins");
         pluginsFolder.mkdirs();
         for(File f : Objects.requireNonNull(pluginsFolder.listFiles())) {
-            Logger.log("Attempting to load the file " + f);
             try {
                 if (f.isDirectory()) {
                     continue;
@@ -91,56 +84,8 @@ public class EventHandler {
                 if (!extension.equals("jar")) {
                     continue;
                 }
-                JarFile pluginJar = new JarFile(f);
-                if(pluginJar.getJarEntry("plugin.yml")==null) {
-                    throw new Exception("There isn't a plugin.yml that can be read! It needs to be at /plugin.yml");
-                }
-                BufferedReader br = new BufferedReader(new InputStreamReader(pluginJar.getInputStream(pluginJar.getJarEntry("plugin.yml"))));
-                String yml = "";
-                String line;
-                while((line = br.readLine())!=null) {
-                    yml = yml + line + " ";
-                }
-                yml = yml.substring(0, yml.length() - 1);
-                br.close();
-                Plugin p;
-                name = "";
-                author = "";
-                description = "";
-                version = "";
-                spectre_version = "";
-                main = "";
-                String[] words = yml.split(" ");
-                for(int a = 0; a < words.length - 1; a = a + 2) {
-                    if(words[a].equals("name:")) {
-                        name = words[a+1];
-                        continue;
-                    }
-                    if(words[a].equals("author:")) {
-                        author = words[a+1];
-                        continue;
-                    }
-                    if(words[a].equals("description:")) {
-                        description = words[a+1];
-                        continue;
-                    }
-                    if(words[a].equals("version:")) {
-                        version = words[a+1];
-                        continue;
-                    }
-                    if(words[a].equals("spectre_version:")) {
-                        spectre_version = words[a+1];
-                        continue;
-                    }
-                    if(words[a].equals("main_class:")) {
-                        main = words[a+1];
-                    }
-                }
-                if(name.equals("") || author.equals("") || description.equals("") || version.equals("") || spectre_version.equals("") || main.equals("")) {
-                    throw new Exception("Not all required tokens were within the plugin YAML.");
-                }
-                //TODO
-                Logger.log(name + " SC-" + spectre_version + "|V-" + version + " loaded successfully!");
+                Logger.log("Attempting to load the file " + f);
+
             }
             catch(Exception e) {
                 e.printStackTrace();

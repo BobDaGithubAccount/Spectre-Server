@@ -1,0 +1,4 @@
+----------
+Spectre-Server v0.1 is starting
+There was a fatal error initialising the http server for s2c level serving. The error:
+java.security.AccessControlException: access denied ("java.net.SocketPermission" "localhost:8000" "listen,resolve")

@@ -1,0 +1,20 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\artifacts\Spectre_Server_jar\plugins\testJar.jar
+testPlugin SC-1.0|V-1.0 loaded successfully!
+Loaded plugins!
+Do 'help' for a list of commands
+704f4576-e497-4ffb-9579-e1524bc31450 joined the server with UUID 4b7fdd86-557b-4a2c-b3ed-54ae88a688a1 and IP /127.0.0.1
+e0d16f10-9047-48b7-9122-822c3057f4de joined the server with UUID 5738bbbb-a9c2-4bb7-b9e1-6570d71899c0 and IP /127.0.0.1
+e0d16f10-9047-48b7-9122-822c3057f4de left the server with UUID 5738bbbb-a9c2-4bb7-b9e1-6570d71899c0
+704f4576-e497-4ffb-9579-e1524bc31450 left the server with UUID 4b7fdd86-557b-4a2c-b3ed-54ae88a688a1
+help | Returns a list of commands supported by the server
+stop | Halts the server
+list | Lists all players connected to the server and their primitive data, like position or rotation
+load | Loads a level of specified name from the /levels folder, if it exits. Usage: load <name-of-save>
+Players:
+7327a5e2-42b3-4c4d-91a9-dbc8d6934b9a joined the server with UUID 4c6ea9fe-b86d-400c-bca1-85d70c4cf34a and IP /127.0.0.1
+Players:
+Players:
+----------

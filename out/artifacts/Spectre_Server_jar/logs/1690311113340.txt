@@ -1,0 +1,6 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\artifacts\Spectre_Server_jar\plugins\testJar.jar
+Loaded plugins!
+Do 'help' for a list of commands

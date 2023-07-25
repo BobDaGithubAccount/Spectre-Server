@@ -1,5 +1,7 @@
 package logging;
 
+import main.Main;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,11 +10,14 @@ import java.util.Date;
 
 public class Logger {
 
+	public static SimpleDateFormat formatter;
+
 	private static FileWriter fw;
 
 	public static void init() {
 		try {
-			File jarFile = new File(Logger.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			File jarFile = Main.jarFile;
 			long time = new Date().getTime();
 			File logsFile = new File(jarFile.getParent() + "/logs");
 			logsFile.mkdirs();
@@ -39,7 +44,6 @@ public class Logger {
 	}
 
 	public static void log(String text) {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date date = new Date();
 		System.out.println("[" + formatter.format(date) + "] " + text);
 		try {
