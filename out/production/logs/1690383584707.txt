@@ -1,0 +1,9 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+Loaded plugins!
+Hello from plugin start()!
+Do 'help' for a list of commands
+C-CONNECT
+5ccbadb7-c468-4af1-8ec7-673ae183220c joined the server with UUID d617f8f8-fc02-4f03-96be-135e115eb57b and IP /127.0.0.1

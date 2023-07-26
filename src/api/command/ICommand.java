@@ -1,7 +1,5 @@
 package api.command;
 
-import command.CommandResponse;
-
 public interface ICommand {
 
 	public String getName();

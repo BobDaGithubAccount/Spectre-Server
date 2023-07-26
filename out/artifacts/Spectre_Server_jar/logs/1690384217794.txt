@@ -1,0 +1,5 @@
+----------
+Spectre-Server v0.1 is starting
+There was an exception loading the server level: 
+Access to C:\Users\duckb\eclipse-workspace\Spectre-Server\out\artifacts\Spectre_Server_jar\saves for read is not allowed!
+Shutting down!

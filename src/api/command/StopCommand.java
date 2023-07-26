@@ -1,4 +1,4 @@
-package command;
+package api.command;
 
 import gamelogic.event.EventManager;
 
@@ -16,7 +16,7 @@ public class StopCommand implements ICommand {
 
 	@Override
 	public CommandResponse run(String[] args) {
-		EventManager.stopServer();
+		EventManager.stopServer(true);
 		return new CommandResponse(true);
 	}
 

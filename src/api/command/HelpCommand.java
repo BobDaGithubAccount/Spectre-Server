@@ -1,4 +1,4 @@
-package command;
+package api.command;
 
 import logging.Logger;
 import main.Main;

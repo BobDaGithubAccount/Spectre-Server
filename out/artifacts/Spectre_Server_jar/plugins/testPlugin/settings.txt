@@ -1,0 +1,2 @@
+helloMessage: Hello from plugin start()!
+byeMessage: So long and thanks for all the stop()!

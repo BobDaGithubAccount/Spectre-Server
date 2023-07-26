@@ -2,6 +2,8 @@ package gamelogic.event;
 
 import api.JavaPlugin;
 import api.events.Event;
+import api.events.EventHandler;
+import api.events.Listener;
 import gamelogic.event.gameEvents.PlayerConnectEvent;
 import gamelogic.event.gameEvents.PlayerDisconnectEvent;
 import gamelogic.event.gameEvents.PlayerMoveEvent;
@@ -69,12 +71,16 @@ public class EventManager {
         addEventListener(Packet.CMovePacket, new PlayerMoveEvent());
 
         try {
-            initPlugins();
-            pollStart();
+            loadPlugins();
         } catch (Exception e) {
             e.printStackTrace();
             Logger.log("There was an error loading plugins!");
         }
+    }
+
+    public static void loadPlugins() throws Exception {
+        initPlugins();
+        pollStart();
     }
 
     public static void pollStart() {
@@ -83,28 +89,54 @@ public class EventManager {
         }
     }
 
-    public static void stopServer() {
+    public static void stopServer(boolean real) {
         for(JavaPlugin plugin : plugins) {
             plugin.stop();
         }
-        Main.scanner.close();
-        Main.ndt.shutdown();
-        Main.canRun = false;
-        Logger.shutdown();
-        System.exit(0);
+        if(real) {
+            Main.scanner.close();
+            Main.ndt.shutdown();
+            Main.canRun = false;
+            Logger.shutdown();
+            System.exit(0);
+        }
     }
 
-    public static ArrayList<Method> pluginEvents = new ArrayList<>();
+    public static boolean reloadServer() {
+        try {
+            stopServer(false);
+            pluginEvents.clear();
+            plugins.clear();
+            loadPlugins();
+        } catch (Exception e) {
+            Logger.log("There was an exception in reloading the server");
+            Logger.log(e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public static ArrayList<Listener> pluginEvents = new ArrayList<>();
 
     public static boolean pollPacketPlugin(JSONObject json, NetworkWorkerThread nwt) {
         try {
             boolean shouldCancel = false;
             Event event = new Event(nwt, json);
-            for (Method method : pluginEvents) {
-                System.out.println(method);
-                shouldCancel = (boolean) method.invoke(event);
-                if (shouldCancel) {
-                    break;
+            for(Listener listener : pluginEvents) {
+                for (Method method : listener.getClass().getDeclaredMethods()) {
+                    if (method.isAnnotationPresent(EventHandler.class) && method.getReturnType().equals(boolean.class)) {
+                        Class<?>[] parameterTypes = method.getParameterTypes();
+                        if (parameterTypes.length != 1 || parameterTypes[0] != Event.class) {
+                            throw new IllegalArgumentException(
+                                    "Method " + method.getName() + " is annotated with @EventHandler but doesn't have correct arguments"
+                            );
+                        }
+                        shouldCancel = (boolean) method.invoke(listener, event);
+                        if(shouldCancel) {
+                            break;
+                        }
+                    }
                 }
             }
             return shouldCancel;

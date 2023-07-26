@@ -1,0 +1,48 @@
+----------
+Spectre-Server v0.1 is starting
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+Loaded plugins!
+[testPlugin] Hello from plugin start()!
+Do 'help' for a list of commands
+help | Returns a list of commands supported by the server
+stop | Halts the server
+list | Lists all players connected to the server and their primitive data, like position or rotation
+load | Loads a level of specified name from the /saves folder, if it exists. Usage: load <name-of-save>
+reload | Reloads all plugins on the server
+ | 
+[testPlugin] So long and thanks for all the stop()!
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+Loaded plugins!
+[testPlugin] Hello from plugin start()!
+[testPlugin] So long and thanks for all the stop()!
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+Loaded plugins!
+[testPlugin] Hello from plugin start()!
+help | Returns a list of commands supported by the server
+stop | Halts the server
+list | Lists all players connected to the server and their primitive data, like position or rotation
+load | Loads a level of specified name from the /saves folder, if it exists. Usage: load <name-of-save>
+reload | Reloads all plugins on the server
+Test Command | getDescription
+No command with that name found. Do 'help' for a list of commands!
+[testPlugin] So long and thanks for all the stop()!
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+Loaded plugins!
+[testPlugin] Hello from plugin start()!
+[testPlugin] So long and thanks for all the stop()!
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+Loaded plugins!
+[testPlugin] Hello from plugin start()!
+[testPlugin] test
+[testPlugin] So long and thanks for all the stop()!
+Loading plugins...
+Attempting to load the file C:\Users\duckb\eclipse-workspace\Spectre-Server\out\production\plugins\testJar.jar
+Loaded plugins!
+[testPlugin] Hello from plugin start()!
+[testPlugin] So long and thanks for all the stop()!
+----------

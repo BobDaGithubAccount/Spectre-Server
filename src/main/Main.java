@@ -1,6 +1,6 @@
 package main;
 
-import command.*;
+import api.command.*;
 import config.Settings;
 import gamelogic.Spectre;
 import gamelogic.event.EventManager;
@@ -42,28 +42,7 @@ public class Main {
 			
 			while(canRun) {
 				String line = scanner.nextLine();
-				String[] words = line.split(" ");
-				if(words.length == 0) {continue;}
-				String label = words[0];
-				words[0] = "";
-				StringBuilder args1 = new StringBuilder();
-				for(String s : words) {
-					args1.append(s);
-				}
-				String[] arguments = args1.toString().split(" ");
-				boolean commandFound = false;
-				
-				for(ICommand command : commands) {
-					if(command.getName().equalsIgnoreCase(label)) {
-						commandFound = true;
-						command.run(arguments);
-						break;
-					}
-				}
-				
-				if(!commandFound) {
-					Logger.log("No command with that name found. Do 'help' for a list of commands!");
-				}
+				runCommand(line);
 			}
 		} catch (Exception e) {
 			if(canRun) {
@@ -80,11 +59,45 @@ public class Main {
 	}
 	
 	public static void init() {
-		commands.add(new HelpCommand());
-		commands.add(new StopCommand());
-		commands.add(new PlayerListCommand());
-		commands.add(new LoadLevelCommand());
+		addCommand(new HelpCommand());
+		addCommand(new StopCommand());
+		addCommand(new PlayerListCommand());
+		addCommand(new LoadLevelCommand());
+		addCommand(new ReloadCommand());
 		EventManager.init();
+	}
+
+	public static void addCommand(ICommand command) {
+		commands.add(command);
+	}
+
+	public static void removeCommand(ICommand command) {
+		commands.remove(command);
+	}
+
+	public static void runCommand(String line) {
+		String[] words = line.split(" ");
+		if(words.length == 0) {return;}
+		String label = words[0];
+		words[0] = "";
+		StringBuilder args1 = new StringBuilder();
+		for(String s : words) {
+			args1.append(s);
+		}
+		String[] arguments = args1.toString().split(" ");
+		boolean commandFound = false;
+
+		for(ICommand command : commands) {
+			if(command.getName().equalsIgnoreCase(label)) {
+				commandFound = true;
+				command.run(arguments);
+				break;
+			}
+		}
+
+		if(!commandFound) {
+			Logger.log("No command with that name found. Do 'help' for a list of commands!");
+		}
 	}
 
 	private static ArrayList<String> whitelistedDirectories = new ArrayList<String>();

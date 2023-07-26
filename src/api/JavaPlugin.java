@@ -3,8 +3,8 @@ package api;
 import api.events.Event;
 import api.events.EventHandler;
 import api.events.Listener;
-import command.CommandResponse;
-import command.ICommand;
+import api.command.CommandResponse;
+import api.command.ICommand;
 import gamelogic.event.EventManager;
 import logging.Logger;
 import main.Main;
@@ -42,10 +42,10 @@ public abstract class JavaPlugin {
     }
 
     protected void log(String message) {
-        Logger.log(message);
+        Logger.log("[" + this.name + "] " + message);
     }
 
-    protected boolean addEventListener(Listener listener) {
+    protected void addEventListener(Listener listener) {
         for (Method method : listener.getClass().getDeclaredMethods()) {
             if (method.isAnnotationPresent(EventHandler.class) && method.getReturnType().equals(boolean.class)) {
                 Class<?>[] parameterTypes = method.getParameterTypes();
@@ -54,35 +54,26 @@ public abstract class JavaPlugin {
                             "Method " + method.getName() + " is annotated with @EventHandler but doesn't have correct arguments"
                     );
                 }
-                EventManager.pluginEvents.add(method);
             }
         }
-        return true;
+        EventManager.pluginEvents.add(listener);
     }
 
-    protected boolean removeEventListener(Listener listener) {
-        for (Method method : listener.getClass().getDeclaredMethods()) {
-            if (method.isAnnotationPresent(EventHandler.class) && method.getReturnType().equals(boolean.class)) {
-                Class<?>[] parameterTypes = method.getParameterTypes();
-                if (parameterTypes.length != 1 || parameterTypes[0] != Event.class) {
-                    continue;
-                }
-                EventManager.pluginEvents.remove(method);
-            }
-        }
-        return true;
+    protected void removeEventListener(Listener listener) {
+        EventManager.pluginEvents.remove(listener);
     }
 
-    protected boolean addCommand(ICommand command) {
-        return false;
+    protected void addCommand(ICommand command) {
+        Main.addCommand(command);
     }
 
-    protected boolean removeCommand(ICommand command) {
-        return false;
+    protected void removeCommand(ICommand command) {
+        Main.removeCommand(command);
     }
 
     protected CommandResponse executeCommand(String toRun) {
-        return new CommandResponse("test", false);
+        Main.runCommand(toRun);
+        return new CommandResponse( false);
     }
 
     public abstract void start();

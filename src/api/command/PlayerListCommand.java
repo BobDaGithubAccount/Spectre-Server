@@ -1,4 +1,4 @@
-package command;
+package api.command;
 
 import gamelogic.Spectre;
 import logging.Logger;
