@@ -4,40 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/FATAL_ERROR.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/Spectre-Server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/Spectre-Server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/Spectre-Server.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/plugins/testJar.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/plugins/testJar.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/whitelist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Spectre_Server_jar/whitelist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/api/JavaPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/api/JavaPlugin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/api/command/ICommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/api/command/ICommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/command/CommandResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/command/HelpCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/command/ICommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/command/LoadLevelCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/command/PlayerListCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/command/StopCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/gamelogic/event/EventManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Spectre-Server/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugins/testJar.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/plugins/testJar.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/JavaPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/JavaPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/command/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/command/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/CommandResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/command/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/ICommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/LoadLevelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/command/LoadLevelCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/PlayerListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/command/PlayerListCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/command/StopCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamelogic/event/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamelogic/event/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testJar/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/testJar/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testJar/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testJar/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testJar/src/testFolder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/testJar/src/testFolder/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="47b43127-d463-4d69-8691-2f10bb64aef7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +102,7 @@
       <workItem from="1690206016340" duration="2053000" />
       <workItem from="1690281214414" duration="2097000" />
       <workItem from="1690293404914" duration="16946000" />
-      <workItem from="1690382692732" duration="3378000" />
+      <workItem from="1690382692732" duration="3525000" />
     </task>
     <servers />
   </component>
